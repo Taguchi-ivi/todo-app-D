@@ -5,12 +5,26 @@ header {
     .container {
         padding: 16px 30px;
         width: 100%;
+
+        display: flex;
+        
+        .header-left {
+            h1 {
+                font-weight: 400;
+                font-size: 26px;
+            }
+        }
+
+        .header-right {
+            margin-left: auto;
+            .header_avatar {
+                width: $icon-size;
+                height: $icon-size;
+                border-radius: 999px;
+            }
+        }
     }
     
-    h1 {
-        font-weight: 400;
-        font-size: 26px;
-    }
 
     .header-border {
         width: 100%;
@@ -22,4 +36,6 @@ header {
         mix-blend-mode: normal;
         opacity: 0.1;
     }
+
+    
 }

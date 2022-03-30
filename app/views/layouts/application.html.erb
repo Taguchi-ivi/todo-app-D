@@ -12,17 +12,27 @@
   <body>
       <header>
         <div class="container">
-          <h1>Boards</h1>
-          <%# if user_signed_in? %>
-            <%# .dropdown %>
-              <%# = image_tag current_user.avatar_image, class: 'header_avatar dropbtn ' %>
-          <%# end %>
+          <div class="header-left">
+            <h1>Boards</h1>
+          </div>
+          <% if user_signed_in? %>
+            <div class="header-right">
+              <%= image_tag 'Oval-woman.png', class: 'header_avatar' %>
+            </div>
+          <% end %>
         </div>
         <p class="header-border"></p>
       </header>
+      <% if flash.present? %>
+        <div class="flash">
+          <% flash.each do |key,val| %>
+            <div class="<%= key %>"><%= val %></div>
+          <% end %>
+        </div>
+      <% end %>
     <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <p class="notice"><%#= notice %></p>
+      <p class="alert"><%#= alert %></p>
       <%= yield %>
     </div>
   </body>

@@ -1,0 +1,49 @@
+@import './variables';
+
+.board-item {
+    border-radius: 10px;
+    background-color: $bgc-gray;
+    padding: 32px 20px 20px 20px ;
+    margin-bottom: 26px;
+
+    &-wrapper {
+        display: flex;
+    }
+
+    &-left {
+        font-weight: 400;
+    }
+
+    &-right {
+        margin-left: auto;
+        width: 24px;
+        height: 6px;
+    }
+
+    &-content {
+        margin-top: 6px;
+        font-size: 14px;
+        opacity: 0.4;
+        padding-right: 30px;
+    }
+
+    &-avatar { 
+        margin-top: 29px;
+
+        img {
+            width: $icon-size-mini;
+            height: $icon-size-mini;
+            border-radius: 999px;
+        }
+    }
+
+}
+
+.board-new {
+    font-weight: 400;
+    text-align: center;
+    padding: 68px 110px;
+    border: 1px dashed rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: #fff;
+}
