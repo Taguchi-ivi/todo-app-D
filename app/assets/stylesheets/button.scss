@@ -1,0 +1,23 @@
+@import './variables';
+
+.btn-wrap {
+    position: fixed;
+    width: 80%;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.btn-primary {
+    background-color: $primary-color;
+    border: none;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding: 16px 0;
+    // display: block;
+    font-weight: bold;
+    font-size: 18px;
+}
+

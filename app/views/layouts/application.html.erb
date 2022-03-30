@@ -10,6 +10,20 @@
   </head>
 
   <body>
-    <%= yield %>
+      <header>
+        <div class="container">
+          <h1>Boards</h1>
+          <%# if user_signed_in? %>
+            <%# .dropdown %>
+              <%# = image_tag current_user.avatar_image, class: 'header_avatar dropbtn ' %>
+          <%# end %>
+        </div>
+        <p class="header-border"></p>
+      </header>
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>
