@@ -1,0 +1,34 @@
+@import './variables';
+
+input,select {
+    &.text {
+        width: 100%;
+        padding: 16px 24px;
+        background-color: $bgc-gray;
+        border-radius: 10px;
+        border: none;
+    }
+}
+
+textarea {
+    width: 100%;
+    margin: 8px 0px;
+    padding: 8px 8px;
+    min-height: 440px;
+    resize: vertical;
+    border: 1px solid #EBEBEB;
+}
+
+.field {
+    margin-bottom: 33px;
+    
+    &_min {
+        margin-bottom: 16px;
+    }
+}
+
+form {
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

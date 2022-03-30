@@ -28,6 +28,21 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# devise
+gem 'devise'
+
+# Faker
+# https://github.com/faker-ruby/faker
+gem 'faker'
+
+# Hamlよりも早い.使う用
+# 変換コマンド  bundle exec rake haml:replace_erbs
+gem 'hamlit'
+
+# モデルに現在のDB構造をメモする機能
+gem 'annotate'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -38,8 +53,11 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  # gem 'spring'
+  # gem 'spring-watcher-list  en', '~> 2.0.0'
+
+  # Haml変換用
+  gem 'erb2haml'
 end
 
 group :test do
