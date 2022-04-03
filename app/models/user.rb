@@ -23,8 +23,16 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable
 
 
+  has_one :profile, dependent: :destroy
   has_many :boards, dependent: :destroy
   has_many :tasks, dependent: :destroy
+
+  delegate :birthday, :age, :gender, to: :profile, allow_nil: true
+
+  def display_name
+    # profile.nickname || self.email.split('@').first
+    profile&.nickname || self.email.split('@').first
+  end
 
   def has_board_written?(board)
     boards.exists?(id: board.id)
@@ -34,13 +42,17 @@ class User < ApplicationRecord
     tasks.exists?(id: task.id)
   end
 
+  def prepare_profile
+    profile || build_profile
+  end
+
   # avatar用 current_user.avatar_image
-  # def avatar_image
-  #   if profile&.avatar&.attached?
-  #     profile.avatar
-  #   else
-  #     'default-avatar.png'
-  #   end
-  # end
+  def avatar_image
+    if profile&.avatar&.attached?
+      profile.avatar
+    else
+      'Oval-man.png'
+    end
+  end
   
 end

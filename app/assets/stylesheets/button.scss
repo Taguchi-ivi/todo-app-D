@@ -7,6 +7,15 @@
     left: 50%;
     transform: translateX(-50%);
 
+    &.min-btn {
+        position: static;
+        margin: 32px auto;
+        left: 0;
+        transform: unset;
+        
+    }
+    
+
 }
 
 .btn-primary {
@@ -20,4 +29,5 @@
     font-weight: bold;
     font-size: 18px;
 }
+
 

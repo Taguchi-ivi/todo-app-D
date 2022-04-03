@@ -1,0 +1,26 @@
+%h2.page-title Profile Edit
+%ul
+    - @profile.errors.full_messages.each do |message|
+        %li= massage
+
+= form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+    .field
+        = f.label :avatar, 'アバター'
+        = f.file_field :avatar
+    .field
+        = f.label :nickname, 'ハンドルネーム'
+        = f.text_field :nickname, class: 'text'
+    .field
+        = f.label :introduction, '自己紹介'
+        = f.text_area :introduction, class: 'text'
+    .field
+        = f.label :gender, '性別'
+        = f.select :gender, Profile.genders.map { |k,v| [ I18n.t("enum.genders.#{k}"), k ] },{},{ class: 'text'}
+    .field
+        = f.label :birthday, '生年月日'
+        = f.date_field :birthday, class: 'text'
+    .field
+        = f.label :subscribed, '通知を受け取る'
+        = f.check_box :subscribed
+    .actions.btn-wrap.min-btn
+        = f.submit 'Submit', class: 'btn-primary'
