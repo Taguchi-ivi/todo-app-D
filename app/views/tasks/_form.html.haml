@@ -1,0 +1,19 @@
+%ul
+  - task.errors.full_messages.each do |message|
+    %li
+      - message
+= form_with(model: task, url: board_tasks_path(task.board), local: true) do |f|
+  .field
+    = f.label :eyecatch, 'Image'
+    = f.file_field :eyecatch
+  .field
+    = f.label :title, 'Name'
+    = f.text_field :title, class: 'text'
+  .field
+    = f.label :content, 'Description'
+    = f.text_area :content, class: 'text'
+  .field
+    = f.label :deadline, 'DeadLine'
+    = f.date_field :deadline, class: 'text'
+  .actions.btn-wrap
+    = f.submit 'Submit', class: 'btn-primary'

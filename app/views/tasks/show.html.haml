@@ -1,0 +1,29 @@
+.task-wrapper
+  %h2.page-title= @task.title.truncate(20, separator: /\s/)
+  - if user_signed_in? && current_user.has_task_written?(@task)
+    .task-edit
+      .dropdown
+        = image_tag 'Combined Shape.png', class: 'dropbtn'
+        .dropdown-content
+          = link_to 'edit', edit_board_task_path(board_id: @board.id, id: @task.id)
+          = link_to 'Delete', board_task_path(board_id: @board.id, id: @task.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？'}
+.task-item
+  - if @task.eyecatch.attached?
+    .task-item-eyecatch
+      = image_tag @task.eyecatch
+  .task-item-content
+    %p= @task.content
+.comment
+  %h3 Comment
+  .comment-item
+    .comment-item-wrapper
+      .comment-item-left= image_tag 'Oval-woman.png'
+      .comment-item-right
+        %p aaaaaaaaaaa
+  .comment-item
+    .comment-item-wrapper
+      .comment-item-left= image_tag 'Oval-woman.png'
+      .comment-item-right
+        %p aaaaaaaaaaa
+  .comment-new
+    + Add new comments

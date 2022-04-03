@@ -1,0 +1,5 @@
+%h2.page-title All Boards
+- @boards.each do |board|
+  = render 'commons/board', board: board
+= link_to new_board_path, class: 'layout-new' do
+  .layout-new-content + Add new board

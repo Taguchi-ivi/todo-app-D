@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   # resources :boards
   resources :boards do 
     resources :tasks
-  
   end
+
+  resource :profile, only: [:show, :edit, :update]
 
   
 

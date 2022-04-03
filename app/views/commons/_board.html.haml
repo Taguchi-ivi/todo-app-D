@@ -1,0 +1,13 @@
+= link_to board_path(board) do
+    .layout-item
+        .layout-item-wrapper
+            .layout-item-left= board.title
+            - if user_signed_in? && current_user.has_board_written?(board)
+                .layout-item-right
+                    .dropdown
+                        = image_tag 'Combined Shape.png', class: 'dropbtn'
+                        .dropdown-content
+                            = link_to 'edit', edit_board_path(board)
+                            = link_to 'Delete', board_path(board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？'}
+        .layout-item-content= board.content
+        .layout-item-avatar= image_tag board.user.avatar_image
