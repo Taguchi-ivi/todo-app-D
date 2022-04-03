@@ -13,7 +13,9 @@
       <header>
         <div class="container">
           <div class="header-left">
-            <h1>Boards</h1>
+            <%= link_to root_path do %>
+              <h1>Boards</h1>
+            <% end %>
           </div>
           <% if user_signed_in? %>
             <div class="header-right">
