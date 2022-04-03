@@ -1,0 +1,43 @@
+@import './variables';
+
+
+.task {
+
+    &-wrapper {
+        display: flex;
+    }
+
+    &-edit {
+        margin: 33px 0 33px auto;
+        
+        // ドロップダウンのcssはcommonに記載
+    }
+
+    &-item {
+        
+        &-eyecatch {
+            height: 170px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: $container-padding * 0.8 $container-padding * 0.8 16px;
+    
+            img {
+                width: 100%;
+            }
+        }
+
+        &-content {
+            background-color: $bgc-gray;
+            padding: 20px 16px;
+            border-radius: 10px;
+            width: 100%;
+
+            p {
+                font-size: 14px;
+                line-height: 19px;
+                
+            }
+        }
+    }
+}
+

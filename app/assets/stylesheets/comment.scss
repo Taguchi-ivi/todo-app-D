@@ -1,0 +1,61 @@
+@import './variables';
+
+
+.comment {
+    margin: 35px 0;
+
+    h3 {
+        font-size: 26px;
+        line-height: 36px;
+    }
+
+    &-item {
+        margin-bottom: 32px;
+
+        &:first-of-type {
+            margin-top: 25px;
+        }
+
+        &-wrapper {
+            display: flex;
+        }
+
+        &-left {
+            vertical-align: middle;
+
+            img {
+                width: $icon-size;
+                height: $icon-size;
+                border-radius: 999px;
+            }
+        }
+
+        &-right {
+            margin-left: 5%;
+
+            p {
+                font-size: 14px;
+                line-height: 19px;
+            }
+        }
+    }
+
+    &-new {
+        padding: 20px;
+        text-align: center;
+        background: #FFF;
+        border: 1px dashed rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        font-size: 14px;
+        line-height: 19px;
+        transition: all 0.7s;
+    
+        &:hover {
+            background-color: $bgc-gray;
+            color: #fff;
+            font-size: 18px;
+        }
+
+    }
+
+}

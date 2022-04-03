@@ -2,26 +2,28 @@
 <h2 class="page-title">All Boards</h2>
 
 <% @boards.each do |board| %>
-    <div class="board-item">
-        <div class="board-item-wrapper">
-            <div class="board-item-left"><%= board.title %></div>
-            <% if user_signed_in? && current_user.has_written?(board) %>
-                <div class="board-item-right">
-                    <div class="dropdown">
-                        <%= image_tag 'Combined Shape.png', class: 'dropbtn' %>
-                        <div class="dropdown-content">
-                            <%= link_to 'edit', edit_board_path(board) %>
-                            <%= link_to 'Delete', board_path(board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？'} %>
+    <%= link_to board_path(board) do %>
+        <div class="layout-item">
+            <div class="layout-item-wrapper">
+                <div class="layout-item-left"><%= board.title %></div>
+                <% if user_signed_in? && current_user.has_board_written?(board) %>
+                    <div class="layout-item-right">
+                        <div class="dropdown">
+                            <%= image_tag 'Combined Shape.png', class: 'dropbtn' %>
+                            <div class="dropdown-content">
+                                <%= link_to 'edit', edit_board_path(board) %>
+                                <%= link_to 'Delete', board_path(board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？'} %>
+                            </div>
                         </div>
                     </div>
-                </div>
-            <% end %>
+                <% end %>
+            </div>
+            <div class="layout-item-content"><%= board.content %></div>
+            <div class="layout-item-avatar"><%= image_tag 'Oval-man.png' %></div>
         </div>
-        <div class="board-item-content"><%= board.content %></div>
-        <div class="board-item-avatar"><%= image_tag 'Oval-man.png' %></div>
-    </div>
+    <% end %>
 <% end %>
 
-<%= link_to new_board_path do %>
-    <div class="board-new">+ Add new board</div>
+<%= link_to new_board_path, class: 'layout-new' do %>
+    <div class="layout-new-content">+ Add new board</div>
 <% end %>

@@ -1,0 +1,46 @@
+
+<div class="task-wrapper">
+    <h2 class="page-title"><%= @task.title.truncate(20, separator: /\s/) %></h2>
+    <% if user_signed_in? && current_user.has_task_written?(@task) %>
+        <div class="task-edit">
+            <div class="dropdown">
+                <%= image_tag 'Combined Shape.png', class: 'dropbtn' %>
+                <div class="dropdown-content">
+                    <%= link_to 'edit', edit_board_task_path(board_id: @board.id, id: @task.id) %>
+                    <%= link_to 'Delete', board_task_path(board_id: @board.id, id: @task.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？'} %>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+<div class="task-item">
+    <% if @task.eyecatch.attached? %>
+        <div class="task-item-eyecatch">
+            <%= image_tag @task.eyecatch %>
+        </div>
+    <% end %>
+    <div class="task-item-content">
+        <p><%= @task.content %></p>
+    </div>
+</div>
+
+<div class="comment">
+    <h3>Comment</h3>
+    <div class="comment-item">
+        <div class="comment-item-wrapper">
+            <div class="comment-item-left"><%= image_tag 'Oval-woman.png' %></div>
+            <div class="comment-item-right"><p>aaaaaaaaaaa</p></div>
+        </div>
+    </div>
+    <div class="comment-item">
+        <div class="comment-item-wrapper">
+            <div class="comment-item-left"><%= image_tag 'Oval-woman.png' %></div>
+            <div class="comment-item-right"><p>aaaaaaaaaaa</p></div>
+        </div>
+    </div>
+
+    <div class="comment-new">
+        + Add new comments
+    </div>
+</div>

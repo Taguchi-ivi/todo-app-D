@@ -1,0 +1,111 @@
+@import './variables';
+
+.layout-item {
+    border-radius: 10px;
+    background-color: $bgc-gray;
+    padding: 10px 20px 20px 20px ;
+    margin-bottom: 26px;
+    transition: box-shadow 0.7s;
+    
+    &:hover {
+        box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+
+    }
+
+    &-img {
+        height: 170px;
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        margin: $container-padding * 0.8 $container-padding * 0.8 16px;
+
+        img {
+            
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+    }
+    
+
+    &-wrapper {
+        display: flex;
+    }
+
+    &-left {
+        font-weight: 400;
+    }
+
+    &-right {
+        margin-left: auto;
+        width: 24px;
+        height: 6px;
+    }
+
+    &-content {
+        margin-top: 6px;
+        font-size: 14px;
+        opacity: 0.4;
+        padding-right: 30px;
+    }
+
+    &-avatar { 
+        margin-top: 29px;
+
+        img {
+            width: $icon-size-mini;
+            height: $icon-size-mini;
+            border-radius: 999px;
+        }
+    }
+
+    &-count {
+        margin-top: 32px;
+        margin-left: auto;
+        
+        &-num {
+            font-size: 14px;
+            opacity: 0.2;
+        }
+
+        &-img {
+            vertical-align: middle;   
+        }
+        
+        img {
+            width: $comment-img-size-width;
+            height: $comment-img-size-height;
+            
+        }
+        
+    }
+
+}
+
+.layout-new {
+
+    display: block;
+    margin-bottom: 26px;
+
+    &-content {
+
+        font-weight: 400;
+        text-align: center;
+        padding: 68px 110px;
+        border: 1px dashed rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        background-color: #fff;
+        margin-bottom: 26px;
+        transition: all 0.7s;
+    
+        &:hover {
+            background-color: $bgc-gray;
+            color: #fff;
+            font-size: 22px;
+        }
+    }
+}
