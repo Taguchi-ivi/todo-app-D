@@ -22,6 +22,11 @@ header {
                 height: $icon-size;
                 border-radius: 999px;
             }
+
+            .header_setting {
+                width: $icon-size - 10px;
+                margin-right: 10px;
+            }
         }
     }
     

@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   # resources :boards
   resources :boards do 
-    resources :tasks
+    resources :tasks do
+      resources :comments, only: [:new, :create]
+    end
   end
 
   resource :profile, only: [:show, :edit, :update]
