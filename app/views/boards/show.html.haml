@@ -12,7 +12,7 @@
       .layout-item-wrapper
         .layout-item-avatar= image_tag task.user.avatar_image
         .layout-item-count
-          %span.layout-item-count-num 23
+          %span.layout-item-count-num= task.comments.count
           %span.layout-item-count-img= image_tag 'message-square-outline.png'
 = link_to new_board_task_path(@board), class: 'layout-new' do
   .layout-new-content + Add new Card

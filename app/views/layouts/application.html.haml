@@ -20,6 +20,12 @@
               .dropdown-content
                 = link_to 'myPage', profile_path
                 = link_to 'logout', destroy_user_session_path, data: { method: 'delete' }
+        - else
+          .header-right
+            .dropdown
+              = image_tag 'Combined Shape.png', class: 'header_setting'
+              .dropdown-content
+                = link_to 'logIn', new_user_session_path
       %p.header-border
     - if flash.present?
       .flash

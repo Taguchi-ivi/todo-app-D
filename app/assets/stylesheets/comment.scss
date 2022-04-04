@@ -7,14 +7,15 @@
     h3 {
         font-size: 26px;
         line-height: 36px;
+        margin-bottom: 25px;
     }
 
     &-item {
         margin-bottom: 32px;
 
-        &:first-of-type {
-            margin-top: 25px;
-        }
+        // &:first-of-type {
+        //     margin-top: 25px;
+        // }
 
         &-wrapper {
             display: flex;

@@ -1,0 +1,13 @@
+%h2.page-title New Comment
+%ul
+    - @comment.errors.full_messages.each do |message|
+        %li
+            - message
+= form_with(model: @comment, url: board_task_comments_path, method: 'post', local: true) do |f|
+    .field
+        = f.label :content, 'Description'
+        = f.text_area :content, class: 'text'
+    .actions.btn-wrap
+        = f.submit 'Submit', class: 'btn-primary'
+
+

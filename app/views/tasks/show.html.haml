@@ -15,15 +15,12 @@
     %p= @task.content
 .comment
   %h3 Comment
-  .comment-item
-    .comment-item-wrapper
-      .comment-item-left= image_tag 'Oval-woman.png'
-      .comment-item-right
-        %p aaaaaaaaaaa
-  .comment-item
-    .comment-item-wrapper
-      .comment-item-left= image_tag 'Oval-woman.png'
-      .comment-item-right
-        %p aaaaaaaaaaa
-  .comment-new
-    + Add new comments
+  - @comments.each do |comment|
+    .comment-item
+      .comment-item-wrapper
+        .comment-item-left= image_tag comment.user.avatar_image
+        .comment-item-right
+          %p= comment.content
+  = link_to new_board_task_comment_path(board_id: @board.id, task_id: @task.id) do
+    .comment-new
+      + Add new comments
